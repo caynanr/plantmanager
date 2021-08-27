@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
+import { useNavigation } from "@react-navigation/core";
 
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
@@ -10,23 +11,11 @@ import { PlantCardPrimary } from "../components/PlantCardPrimary";
 import { Load } from "../components/Load";
 
 import { plants } from "../services/plants";
+import { PlantProps } from "../libs/storage";
 
 interface EnviromentProps {
   key: string;
   title: string;
-}
-
-interface PlantProps {
-  id: number;
-  name: string;
-  about: string;
-  water_tips: string;
-  photo: string;
-  environments: [string];
-  frequency: {
-    times: number;
-    repeat_every: string;
-  };
 }
 
 export function PlantSelect() {
@@ -40,6 +29,7 @@ export function PlantSelect() {
   const [enviromentSelected, setEnviromentSelected] = useState("all");
   const [filteredPlants, setFilteredPlants] = useState<PlantProps[]>(plants);
   const [loading, setLoading] = useState(true);
+  const navigation = useNavigation();
 
   function handleEnviromentSelected(enviroment: string) {
     setEnviromentSelected(enviroment);
@@ -53,11 +43,15 @@ export function PlantSelect() {
     setFilteredPlants(filtered);
   }
 
+  function handlePlantSelect(plant: PlantProps) {
+    navigation.navigate("PlantSave", { plant });
+  }
+
   useEffect(() => {
     new Promise(() => {
       setTimeout(() => {
         setLoading(false);
-      }, 5000);
+      }, 800);
     });
   }, []);
 
@@ -73,6 +67,7 @@ export function PlantSelect() {
       <View>
         <FlatList
           data={enviroments}
+          keyExtractor={(item) => String(item.key)}
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.enviromentList}
@@ -89,7 +84,13 @@ export function PlantSelect() {
       <View style={styles.plants}>
         <FlatList
           data={filteredPlants}
-          renderItem={({ item }) => <PlantCardPrimary data={item} />}
+          keyExtractor={(item) => String(item.id)}
+          renderItem={({ item }) => (
+            <PlantCardPrimary
+              data={item}
+              onPress={() => handlePlantSelect(item)}
+            />
+          )}
           showsVerticalScrollIndicator={false}
           numColumns={2}
         />
@@ -101,6 +102,7 @@ export function PlantSelect() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.background,
   },
   header: {
     paddingHorizontal: 30,

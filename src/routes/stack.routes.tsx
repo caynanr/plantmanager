@@ -7,7 +7,9 @@ import colors from "../styles/colors";
 import { Welcome } from "../pages/Welcome";
 import { UserIndentification } from "../pages/UserIndentification";
 import { Confirmation } from "../pages/Confirmation";
-import { PlantSelect } from "../pages/PlantSelect";
+import { PlantSave } from "../pages/PlantSave";
+
+import AuthRoutes from "./tab.routes";
 
 const stack = createNativeStackNavigator();
 
@@ -24,7 +26,9 @@ const AppRoutes: React.FC = () => (
     <stack.Screen name="Welcome" component={Welcome} />
     <stack.Screen name="UserIndentification" component={UserIndentification} />
     <stack.Screen name="Confirmation" component={Confirmation} />
-    <stack.Screen name="PlantSelect" component={PlantSelect} />
+    <stack.Screen name="PlantSelect" component={AuthRoutes} />
+    <stack.Screen name="PlantSave" component={PlantSave} />
+    <stack.Screen name="MyPlants" component={AuthRoutes} />
   </stack.Navigator>
 );
 

@@ -1,6 +1,6 @@
 export const plants = [
   {
-    id: 1,
+    id: '1',
     name: "Aningapara",
     about:
       "É uma espécie tropical que tem crescimento rápido e fácil manuseio.",
@@ -15,7 +15,7 @@ export const plants = [
     },
   },
   {
-    id: 2,
+    id: '2',
     name: "Zamioculca",
     about:
       "Apesar de florescer na primavera, fica o ano todo bonita e verdinha. ",
@@ -30,7 +30,7 @@ export const plants = [
     },
   },
   {
-    id: 3,
+    id: '3',
     name: "Peperomia",
     about:
       "Adapta-se tanto ao sol e sombra, mas prefere ficar num cantinho fresco, sem sol direto. ",
@@ -45,7 +45,7 @@ export const plants = [
     },
   },
   {
-    id: 4,
+    id: '4',
     name: "Imbé",
     about:
       "De médio porte que se adapta a diversas regiões, além de ser bem fácil de cultivar. Conquista cada vez mais pessoas.",
@@ -60,7 +60,7 @@ export const plants = [
     },
   },
   {
-    id: 5,
+    id: '5',
     name: "Espada São Jorge",
     about:
       "O aroma reduz os níveis de ansiedade e seu cheiro ajudar na qualidade do sono e a produtividade durante o dia.",
@@ -74,7 +74,7 @@ export const plants = [
     },
   },
   {
-    id: 6,
+    id: '6',
     name: "Yucca",
     about:
       "São indicadas pois são fáceis de manter e cuidar. Você colocar em pequenos vasos, ou até mesmo em xícaras.",
@@ -89,7 +89,7 @@ export const plants = [
     },
   },
   {
-    id: 7,
+    id: '7',
     name: "Frutíferas",
     about:
       "Exigem algumas horinhas de sol por dia, por isso deixe próximo a janelas.",
@@ -104,7 +104,7 @@ export const plants = [
     },
   },
   {
-    id: 8,
+    id: '8',
     name: "Orquídea",
     about:
       "Traz sensação de tranquilidade e paz ao ambiente. Requer pouca manutenção e ótima para quem tem pouco espaço.",
@@ -118,7 +118,7 @@ export const plants = [
     },
   },
   {
-    id: 9,
+    id: '9',
     name: "Violeta",
     about:
       "Com flores delicadas. Elas são ótimas sugestões para decorar o banheiro. ",
@@ -133,7 +133,7 @@ export const plants = [
     },
   },
   {
-    id: 10,
+    id: '10',
     name: "Hortênsia",
     about:
       "A hortênsia é uma planta rústica e se adapta a diferentes tipos de solos.",

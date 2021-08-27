@@ -10,9 +10,9 @@ import {
 import Routes from "./src/routes";
 
 export default function App() {
-  const [fonstLoaded] = useFonts({ Jost_400Regular, Jost_600SemiBold });
+  const [fontsLoaded] = useFonts({ Jost_400Regular, Jost_600SemiBold });
 
-  if (!fonstLoaded) return <AppLoading />;
+  if (!fontsLoaded) return <AppLoading />;
 
   return (
     <>
